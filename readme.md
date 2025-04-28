@@ -5,10 +5,10 @@ This is a simple AI Agent demo that interacts with a MySQL database to manage st
 - FastAPI (backend server)
 - LangChain + Ollama (local LLM agent)
 - Streamlit (frontend UI)
-<!-- 
-## 📸 Demo Screenshot
 
-![Demo UI](demo_screenshot.png) -->
+## Demo Screenshot
+
+![Demo UI](./frontend/demo/demo1.png)
 
 ## Features
 - Create, insert, update, delete student records via AI
@@ -39,7 +39,7 @@ cd ai-agent-student-db
 ```bash
 ollama run mistral
 ```
-
+If you have installed your model before, just run ollama app.
 ### 3. Setup the MySQL environment
 
 Open your MySQL DBMS and run this SQL code:
@@ -47,7 +47,7 @@ Open your MySQL DBMS and run this SQL code:
 ```SQL
 CREATE DATABASE StudentsLogs;
 CREATE DATABASE StudentsManagement;
-USE student_db;
+USE StudentsLogs;
 ```
 
 Do not forget to change the password or database name on backend/constants.py python file.
@@ -66,7 +66,7 @@ uvicorn main:app --reload --port 8000
 Open another terminal, and run this command:
 
 ```bash
-cd ../frontend
+cd frontend
 streamlit run app.py
 ```
 
